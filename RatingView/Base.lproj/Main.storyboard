@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RatingView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="J2k-HY-fL6">
+                                <rect key="frame" x="36" y="345" width="342" height="32"/>
+                                <segments>
+                                    <segment title="full"/>
+                                    <segment title="Half"/>
+                                    <segment title="Float"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="NkK-FR-Ypf"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck7-ZN-S3o" customClass="RatingView" customModule="RatingView" customModuleProvider="target">
+                                <rect key="frame" x="36" y="426" width="342" height="44"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7uh-BV-euD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="fullStar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minRating">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxRating">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="editable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMg-oW-BJ5">
+                                <rect key="frame" x="36" y="520" width="53.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cm-5P-fY9">
+                                <rect key="frame" x="97.5" y="520" width="24" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qMg-oW-BJ5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="A74-rO-i34"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J2k-HY-fL6" secondAttribute="trailing" constant="36" id="Agq-RW-9nc"/>
+                            <constraint firstItem="qMg-oW-BJ5" firstAttribute="top" secondItem="ck7-ZN-S3o" secondAttribute="bottom" constant="50" id="BJF-5p-KqF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ck7-ZN-S3o" secondAttribute="trailing" constant="36" id="CBc-cY-DjY"/>
+                            <constraint firstItem="J2k-HY-fL6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="KSk-zS-JRP"/>
+                            <constraint firstItem="0cm-5P-fY9" firstAttribute="top" secondItem="qMg-oW-BJ5" secondAttribute="top" id="Y3z-Qx-Y0S"/>
+                            <constraint firstItem="ck7-ZN-S3o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="ZBl-Jn-bF1"/>
+                            <constraint firstItem="0cm-5P-fY9" firstAttribute="leading" secondItem="qMg-oW-BJ5" secondAttribute="trailing" constant="8" id="ecu-k2-0gv"/>
+                            <constraint firstItem="ck7-ZN-S3o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fK0-d3-pO3"/>
+                            <constraint firstItem="ck7-ZN-S3o" firstAttribute="top" secondItem="J2k-HY-fL6" secondAttribute="bottom" constant="50" id="mh8-id-fSs"/>
+                            <constraint firstItem="ck7-ZN-S3o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rgU-gY-8Qz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="rateLabel" destination="0cm-5P-fY9" id="Em4-xQ-zxk"/>
+                        <outlet property="ratingView" destination="ck7-ZN-S3o" id="ZWS-1M-qvx"/>
+                        <outlet property="segmentedControl" destination="J2k-HY-fL6" id="Kgi-LY-hkt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="138"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="emptyStar" width="510" height="512"/>
+        <image name="fullStar" width="475" height="476"/>
+    </resources>
+</document>
